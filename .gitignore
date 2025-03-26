@@ -1,0 +1,6 @@
+venv/
+model/
+*.pt
+*.bin
+*.h5
+*.ckpt

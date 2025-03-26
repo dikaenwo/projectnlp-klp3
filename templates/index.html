@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ringkasan Berita AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Ringkasan Artikel Berita</h2>
+        
+        <div class="row">
+            <!-- Input Form -->
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h4 class="mb-3">Masukkan Teks Berita</h4>
+                    <form method="post">
+                        <textarea class="form-control mb-3" name="text" rows="5" placeholder="Masukkan teks berita..." required></textarea>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="min_length" class="form-label">Min Length</label>
+                                <input type="number" class="form-control" name="min_length" value="20" min="10" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="max_length" class="form-label">Max Length</label>
+                                <input type="number" class="form-control" name="max_length" value="80" min="20" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Ringkas</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Output Summary -->
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h4 class="mb-3">Hasil Ringkasan</h4>
+                    {% if summary %}
+                        <p class="border p-3 bg-white">{{ summary }}</p>
+                    {% else %}
+                        <p class="text-muted">Ringkasan akan muncul di sini...</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Informasi Kelompok -->
+            <div class="col-md-12 mt-5">
+                <div class="card shadow p-4 text-center">
+                    <h5>Project NLP - Kelompok 3</h5>
+                    <p><strong>Dosen Pembimbing:</strong> M. Rudini Kurniawan</p>
+                    <p><strong>Anggota Kelompok:</strong></p>
+                    <p>Rezki Andika | Muh Faiz Fajar Mansyur | M Rifai Rahim | Nur Aqilah H | Juliana Sari | Muh Fadhel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
